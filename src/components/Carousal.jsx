@@ -13,16 +13,16 @@ const Carousal = () => {
         showArrows={false}
         showThumbs={false}
       >
-        <div className="w-full h-[700px]">
-          <img className="w-full h-full " src={banner} />
+        <div className="w-full h-[600px]">
+          <img className="w- h-full  object-contain" src={banner} />
           <img src={banner} />
         </div>
-        <div className="w-full h-[700px]">
-          <img className="w-full h-full " src={banner} />
+        <div className="w-full h-[600px]">
+          <img className="w- h-full  object-contain" src={banner} />
           <img src={banner} />
         </div>
-        <div className="w-full h-[700px]">
-          <img className="w-full h-full " src={banner} />
+        <div className="w-full h-[600px]">
+          <img className="w- h-full  object-contain" src={banner} />
         </div>
       </Carousel>
     </>

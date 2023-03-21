@@ -22,7 +22,7 @@ function App() {
             <div className="relative h-[100vh] w-full p-[28px]  bg-white">
               <div className="flex justify-between">
                 <img src={logo} alt="logo" width={30} height={30} />
-                <div className="w-[222px] md:absolute -bottom-[7.5rem] left-10">
+                <div className="w-[222px] md:absolute bottom-0 left-10">
                   <span className="text-black text-md mr-2 font-[500]">
                     Not member?
                   </span>
@@ -40,7 +40,7 @@ function App() {
 
                 <div
                   data-aos="fade-up"
-                  className=" hidden md:block md:w-[50%] mb-10 "
+                  className=" hidden md:block md:w-[50%]  "
                 >
                   <Carousal />
                 </div>

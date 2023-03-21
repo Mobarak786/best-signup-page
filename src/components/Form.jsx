@@ -28,8 +28,9 @@ const Form = ({ setIsClicked }) => {
             className=" flex p-1 mt-10 bg-gray-200 w-[344px] rounded-md "
           >
             <input
-              className="w-[50%] px-5 border-none bg-transparent focus:outline-none font-[500]"
+              className=" w-[50%] px-5 border-none bg-transparent focus:outline-none font-[500]"
               type={"text"}
+              autoFocus
               placeholder="Username"
               required
               name="username"
