@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import OTPInput from "otp-input-react";
+import { useNavigate } from "react-router-dom";
 
+// for example we are taking this value for verifying .
+const OTPVALUE = "123456";
 const GetOtp = ({ setIsClicked }) => {
   const [otp, setOtp] = useState("");
   const [time, setTime] = useState(60);
+  const [alert, setAlert] = useState("");
+  const navigate = useNavigate();
   useEffect(() => {
     if (time === 0) return;
     const interval = setInterval(() => {
@@ -11,8 +16,16 @@ const GetOtp = ({ setIsClicked }) => {
     }, 1000);
     return () => clearInterval(interval);
   }, [time]);
-  console.log(time);
 
+  // taking another useeffect to validate otp value
+  useEffect(() => {
+    if (otp === OTPVALUE) {
+      navigate("/success");
+    }
+    if (otp.length === 6 && otp != OTPVALUE) {
+      setAlert("Oops! Please give correct otp...");
+    }
+  }, [otp]);
   return (
     <div className="w-full md:w-[50%] flex flex-col items-center my-auto">
       <h1 className="font-[700] mt-10 text-[30px] text-black">
@@ -58,6 +71,9 @@ const GetOtp = ({ setIsClicked }) => {
             </span>
           </div>
         </div>
+        <p className="mt-3 font-semibold text-red-400 text-sm text-center">
+          {alert}
+        </p>
       </div>
     </div>
   );
